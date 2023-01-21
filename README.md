@@ -4,7 +4,7 @@ Simple buffer writer for javascript Buffers (all unsigned)
 
 ## Usage
 ```js
-const BufferWriter = require('./index.js');
+const BufferWriter = require('buffer-writer');
 
 /* Create a new buffer */
 const Buffer = new BufferWriter();
