@@ -107,18 +107,25 @@ class BufferWriter {
      * @author Icseon
      * @description This will add a string to the buffer
      * @param value
+     * @param length
      */
-    string(value)
+    string(value, length = undefined)
     {
 
+        /* If the length is undefined, we'll calculate the length ourselves here */
+        if (length === undefined)
+        {
+            length = value.length;
+        }
+
         /* Make sure our buffer can store the string */
-        this.ensure(value.length);
+        this.ensure(length);
 
         /* Add the string to the buffer */
         this.buffer.write(value, this.offset);
 
         /* Update offset */
-        this.offset += value.length;
+        this.offset += length;
 
     }
 
