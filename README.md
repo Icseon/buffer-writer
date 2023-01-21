@@ -2,6 +2,11 @@
 Simple buffer writer for javascript Buffers (all unsigned)
 
 
+## Installation
+```
+npm i https://github.com/Icseon/buffer-writer --save
+```
+
 ## Usage
 ```js
 const BufferWriter = require('buffer-writer');
