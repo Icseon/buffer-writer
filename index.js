@@ -122,6 +122,26 @@ class BufferWriter {
 
     }
 
+    /**
+     * @author Icseon
+     * @description This method will accept an array of bytes and will add it to our buffer
+     * @param bytes
+     */
+    bytes(bytes = [])
+    {
+
+        /* Create a new buffer from the array of bytes we have received */
+        const buffer = Buffer.from(bytes);
+
+        /* Add the newly created buffer to our existing buffer */
+        this.buffer = Buffer.concat([ this.buffer, buffer ]);
+
+        /* Update offset and size variables */
+        this.offset += buffer.length;
+        this.size += buffer.length; /* We are not using ensure here because we're using concat */
+
+    }
+
 }
 
 module.exports = BufferWriter;
